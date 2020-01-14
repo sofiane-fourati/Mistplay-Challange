@@ -1,0 +1,19 @@
+{%extends "index.html"%}
+{% block content%}
+<form method="post" enctype="multipart/form-data" action="." >
+{% csrf_token %}
+{{ form.non_field_errors }}
+{{ form.source.errors }}
+{{ form.source }}
+<table border="0" align="center">
+<tr>
+        <th align="left">{{ form.file.label_tag }}</th>
+        <td>
+          {{ form.file }}
+        </td>
+      </tr>
+	  <th> <input type="Submit" value="Submit"/> </th>
+	</table>
+
+</form>
+{% endblock %}
